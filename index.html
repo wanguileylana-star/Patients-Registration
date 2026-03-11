@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        h2 {
+            text-align: center;
+            color: #2c5aa0;
+        }
+        fieldset {
+            border: 2px solid #2c5aa0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+        }
+        legend {
+            color: #2c5aa0;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #2c5aa0;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #cc0000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">
+        <img src="hospital-logo.png" alt="Hospital Logo">
+    </div>
+
+    <h2>Patient Registration Form</h2>
+
+    <form action="/register-patient" method="POST">
+        
+        <fieldset>
+            <legend>Patient Information</legend>
+
+            <label>Patient Name:</label>
+            <input type="text" name="patientName" required>
+
+            <br>
+
+            <label>Email Address:</label>
+            <input type="email" name="email" required>
+
+            <br>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" required>
+
+            <br>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required>
+
+            <br>
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="Male" id="male">
+                <label for="male">Male</label>
+                <br>
+                <input type="radio" name="gender" value="Female" id="female">
+                <label for="female">Female</label>
+            </div>
+
+            <br>
+
+            <label>Symptoms:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="symptoms" value="Fever" id="fever">
+                <label for="fever">Fever</label>
+                <br>
+                <input type="checkbox" name="symptoms" value="Cough" id="cough">
+                <label for="cough">Cough</label>
+                <br>
+                <input type="checkbox" name="symptoms" value="Headache" id="headache">
+                <label for="headache">Headache</label>
+                <br>
+                <input type="checkbox" name="symptoms" value="Fatigue" id="fatigue">
+                <label for="fatigue">Fatigue</label>
+            </div>
+
+            <br>
+
+            <label>Department:</label>
+            <select name="department" required>
+                <option value="">Select Department</option>
+                <option value="General Medicine">General Medicine</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Surgery">Surgery</option>
+                <option value="Dental">Dental</option>
+            </select>
+
+            <br>
+
+            <label>Additional Medical Notes:</label>
+            <textarea name="notes" rows="4" placeholder="Enter any additional information..."></textarea>
+
+        </fieldset>
+
+        <div class="buttons">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
